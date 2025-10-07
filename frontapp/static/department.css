@@ -1,0 +1,148 @@
+.bus-img{
+	height: 35px;
+	width: 110px;
+}
+
+.bg-color{
+	background-color: #d3d3d3;
+}
+
+
+.fonts{
+	font-family: "arial";
+}
+
+.sidebar {
+    height: 100%;
+    width: 195px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 90px;
+}
+
+
+.sidebar.collapsed + .header {
+    margin-left: 100px; 
+    /* Adjust according to your collapsed sidebar width */
+}
+
+/* Hide the logo in the collapsed state */
+.sidebar.collapsed #logo {
+    display: none;
+}
+
+/* Collapse button icon toggle */
+#sidebarCollapse {
+    background-color: #111;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebarCollapse:hover {
+    background-color: #333;
+}
+
+/* Collapsed state menu text */
+.sidebar.collapsed .menu-text {
+    display: none;
+}
+
+/* Icons in collapsed state are centered */
+.sidebar.collapsed .d-flex {
+    justify-content: center;
+}
+
+.header {
+    margin-left: 205px;
+    margin-top: 10px;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 15px;
+    transition: margin-left 0.3s ease; /* Added transition for smooth effect */
+}
+
+
+.a-highlight{
+    text-decoration:none;
+    color: #FF9933;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.a-highlight:hover {
+	text-decoration: none;
+    background-color: orange;
+    color: black;
+}
+
+.adddepartmentheading{
+	font-size: 25px;
+}
+
+.departmentnameheading{
+	font-size: 20px;
+}
+
+.department_form{
+	width: 350px;
+}
+
+.department_Name_in{
+	width: 350px;
+}
+
+.departmentlistheading{
+	font-size: 25px;
+}
+
+.textofcopyrights{
+    font-size: 10px;
+	color: gray;
+}
+
+.button-icon{
+	height: 31px;
+	width: 36px;
+	padding-left: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #111d2c;
+    cursor: pointer;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: linear-gradient(160deg, #FFAA33, #FFAA33);
+    width: 8px;
+    border-radius: 5px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+    background: #f26707  ;
+    cursor: pointer;
+}
+
+.S-no{
+    width: 100px;
+}
+
+.department-column{
+    width: 450px;
+}
+
+.actions-column{
+    width: 300px;
+}
+

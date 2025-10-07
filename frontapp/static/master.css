@@ -1,0 +1,79 @@
+
+.header {
+    margin-left: 205px;
+    margin-top: 10px;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 15px;
+    transition: margin-left 0.3s ease; /* Added transition for smooth effect */
+}
+
+.quicklinkheading{
+	color: #FF6633;
+	font-size: 25px;
+}	
+
+.quicklinklogo{
+	height: 30px;
+	width:  30px;
+}
+
+.quicklinktext{
+	color: #ff6633;
+	padding: 5px;
+	font-size: 18px;
+	width: 180px;
+	height: 42px;
+	border-radius: 5px;
+}
+
+.table{
+	display: table;
+    border-collapse: collapse;
+}
+
+
+#menuSearch{
+    width: 250px;
+    margin-right: 20px;
+}
+
+.a-highlight{
+    text-decoration:none;
+    color: #FF9933;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.a-highlight:hover {
+	text-decoration: none;
+    background-color: orange;
+    color: black;
+}
+
+.textofcopyrights{
+	margin-top: 290px;
+	margin-left: 210px;
+    font-size: 10px;
+	color: gray;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #111d2c;
+    cursor: pointer;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: linear-gradient(160deg, #FFAA33, #FFAA33);
+    width: 10px;
+    border-radius: 5px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+    background: #f26707  ;
+    cursor: pointer;
+}

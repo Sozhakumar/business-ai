@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Alart message in CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <!-- Alart message Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+    
+
+    <link rel="stylesheet" type="text/css" href="{% static 'area.css' %}">
+
+<title></title>
+</head>
+<body>
+	{% include "home.html" %} 
+    <div class="header">
+        <div class="table shadow pb-5">
+            <h3 class="addareaheading mt-1 ml-3">Add New Area</h3>
+            <form id="Area_form" name="Area_form" class="pl-4 pr-4 pt-3 pb-5" method="POST">
+				{% csrf_token %}
+         	    <div class="d-flex flex-row w-100 mb-4">
+					<div class="">
+						<label class="areaheading">Area</label>
+						<input type="text" class="form-control Area_Name_in ml-3 mb-3 mt-1 " placeholder="Area Name" name="Area_Name_in" id="Area_Name_in" required>
+						<input type="text" id="hiddenareaid" name="hiddenareaid" value="" hidden>
+					</div>
+					<div class="city-div">
+						<label class="cityheading">City</label>
+						<div class="d-flex flex-row">
+							<select class="form-control control-list ml-3" id="Select_City_Name" name="Select_City_Name" required>
+								<option selected class="">Open this select menu</option>
+								{% for city in citylist %}
+                                    <option value="{{ city.id }}">{{ city.City_name }}</option>
+                                {% endfor %}
+							</select>
+							<button class="btn btn-outline-warning p-1" id="add-city">
+								<a href="city.html">
+									<img src="{% static 'images/Plus-icon.png' %}" class="plus-icon a-highlight">
+								</a>
+							</button>
+						</div>
+					</div>
+			    </div>
+		        <div class="d-flex flex-row w-100">
+					<div class="">
+						<label class="stateheading">State</label>
+						<div class="d-flex flex-row mt-1">
+							<select class="form-control control-list ml-3" id="Select_State_Name" name="Select_State_Name" required>
+								<option selected class="">Open this select menu</option>
+								{% for state in statelist %}
+                                    <option value="{{ state.id }}">{{ state.State_name }}</option>
+                                {% endfor %}
+							</select>
+							<button class="btn btn-outline-warning p-1" id="add-state">
+								<a href="state.html">
+									<img src="{% static 'images/Plus-icon.png' %}" class="plus-icon a-highlight">
+								</a>
+							</button>
+					    </div>
+					</div>
+					<div class="Country-div">
+						<label class="countryheading">Country</label>
+						<div class="d-flex flex-row mt-1">
+							<select class="form-control control-list ml-3" id="Select_Country_Name" name="Select_Country_Name" required>
+								<option selected class="">Open this select menu</option>
+								{% for country in countrylist %}
+                                    <option value="{{ country.id }}">{{ country.Country_name }}</option>
+                                {% endfor %}
+							</select>
+							<button class="btn btn-outline-warning p-1" id="add-country">
+								<a href="country.html">
+									<img src="{% static 'images/Plus-icon.png' %}" class="plus-icon a-highlight">
+								</a>
+							</button>
+						</div>
+	                </div>	
+				</div>
+				<div class="mt-4 ml-4">
+					<button class="btn btn-success bg-success text-dark pl-3 pr-3" type="submit">Save</button>
+					<button class="btn btn-danger bg-danger text-dark pl-3 pr-3" type="reset">Clear</button>
+				</div>
+			</form>	 
+	    </div>	  
+        <div class="table shadow">
+			<h3 class="p-3 arealistheading">LIST OF AREA</h3>
+			<div class="mb-4 pl-3 pr-3">
+	            <table class="table table-striped table-bordered" name="area-table" id="area-table">
+	            	<thead class="table-dark">
+	               	    <tr>
+							<th class="S-no text-center">S.No</th>
+							<th class="area-column text-center">Area</th>
+							<th class="city-column text-center">City</th>
+							<th class="state-column text-center">State</th>
+							<th class="country-column text-center">Country</th>
+							<th class="actions-column text-center">Actions</th>
+						</tr> 
+	      	        </thead>
+	                <tbody class="text-center">
+	                    {% for area in arealist %}
+							<tr>
+								<td> {{forloop.counter}} </td>
+								<td> {{area.Area_name}} </td>
+								<td> {{area.city_name}} </td>
+								<td> {{area.state_name}} </td>
+								<td> {{area.country_name}} </td>
+								<td>
+									<button class="btn btn-sm btn-outline-success mr-4 button-icon edit" name="edit" id="edit"
+									onclick="editButton({{area.id}})">
+										✎
+									</button> 
+									<!-- Delete Button -->
+									<button class="btn btn-sm btn-outline-danger button-icon delete" name="delete" id="delete" 
+									onclick="deleteButton({{area.id}})">
+										🗑
+									</button>
+								</td>    
+							</tr>
+	                    {% endfor %}
+	                </tbody>
+	            </table>         
+            </div>
+        </div>  
+		<div class="d-flex flex-row textofcopyrights">
+			<h6 class="p-1 mr-5">Copyright © 2023</h6>
+			<h6 class="p-1 ml-5">All rights reserved</h6>
+		</div>
+    </div>  
+
+    <!-- alrtify JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    
+
+    <script>
+        {% for message in messages %}
+            alertify.set('notifier','position', 'top-right');
+            alertify.success('{{message}}');
+        {% endfor %}
+
+		document.getElementById('sidebarCollapse').addEventListener('click', function() {
+			var sidebar = document.getElementById('sidebar');
+			var header = document.querySelector('.header');
+			
+			
+			sidebar.classList.toggle('collapsed');
+		
+			
+			if (sidebar.classList.contains('collapsed')) {
+				header.style.marginLeft = '100px'; 
+			} else {
+				header.style.marginLeft = '205px'; 
+			}
+		});
+	</script>            
+	
+	<script>
+		$(document).ready(function () {
+    		$('#area-table').DataTable();
+		});
+
+        function editButton(areaId) {
+			alert(areaId);
+			$.ajax({
+				url: `http://127.0.0.1:8001/edit_area/?areaid=${areaId}`,
+				type: 'GET',
+				success: function(response) {
+					if (response.Area_name) {
+						$('#Area_Name_in').val(response.Area_name);
+						$('#Select_City_Name').val(response.Area_City);
+						$('#Select_State_Name').val(response.Area_State);
+						$('#Select_Country_Name').val(response.Area_Country);
+						$('#hiddenareaid').val(response.id);
+					} else {
+						alert('Area details could not be loaded.');
+					}
+				},
+				error: function(xhr, status, error) {
+					console.log('Error:', error);
+					alert('An error occurred while loading Area details.');
+				}
+			});
+		}
+
+        function deleteButton(deleteButton) {
+			alert(deleteButton);
+			if (confirm("Are you sure you want to delete this state?")) {
+			    $.ajax({
+				    url: `http://127.0.0.1:8001/delete_area/?areaid=${deleteButton}`,
+				    type: 'GET',
+				    success: function(response) {
+						alert(response.message);
+						location.reload();
+				    },
+				    error: function(xhr, status, error) {
+						console.log('Error:', error);
+						alert('To delete this Area, Delete the corresponding instance which is associated with this area.');
+				    }
+			    });
+			}
+		}
+
+		$('#add-country').click(function() {
+			window.location.href = '/countrypage/'; 
+		});  
+
+		$('#add-state').click(function() {
+			window.location.href = '/state/'; 
+		});
+		
+		$('#add-city').click(function() {
+			window.location.href = '/city/'; 
+		});  
+	</script>

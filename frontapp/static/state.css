@@ -1,0 +1,213 @@
+.bus-img{
+	height: 35px;
+	width: 110px;
+}
+
+.bg-color{
+	background-color: #d3d3d3;
+}
+
+
+.fonts{
+	font-family: "arial";
+}
+
+.sidebar {
+    height: 100%;
+    width: 195px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 90px;
+}
+
+
+.sidebar.collapsed + .header {
+    margin-left: 100px; 
+    /* Adjust according to your collapsed sidebar width */
+}
+
+/* Hide the logo in the collapsed state */
+.sidebar.collapsed #logo {
+    display: none;
+}
+
+/* Collapse button icon toggle */
+#sidebarCollapse {
+    background-color: #111;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebarCollapse:hover {
+    background-color: #333;
+}
+
+/* Collapsed state menu text */
+.sidebar.collapsed .menu-text {
+    display: none;
+}
+
+/* Icons in collapsed state are centered */
+.sidebar.collapsed .d-flex {
+    justify-content: center;
+}
+
+.header {
+    margin-left: 210px;
+    margin-top: 10px;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 15px;
+    transition: margin-left 0.3s ease; /* Added transition for smooth effect */
+}
+
+.table{
+	display: table;
+	width: 100%;
+    border-collapse: collapse;
+}
+
+.a-highlight{
+    text-decoration:none;
+    color: #FF9933;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.a-highlight:hover {
+	text-decoration: none;
+    background-color: orange;
+    color: black;
+}
+
+.addstateheading {
+    font-size: 25px;
+}
+
+.statecodeheading{
+	font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+
+}
+
+.State_Code_in {
+    width: 300px;
+
+}
+
+.State_code_form, .Country_form {
+    flex: 1;
+}
+
+.Country_form {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.countryheading{
+	font-size: 20px;
+}
+
+.Country_Select {
+    margin-right: 10px;
+}
+
+.plus-icon {
+    width: 30px;
+    height: 28px;
+}
+
+.statenameheading{
+    font-size: 20px;
+}
+
+.State_Code_in{
+    width: 300px;
+}
+
+.State_Name_in {
+    width: 300px;
+}
+
+
+.textofcopyrights{
+    font-size: 10px;
+	color: gray;
+}
+
+.button-icon{
+	height: 30px;
+	width: 35px;
+}
+
+.small-dropdown {
+    font-size: 12px; 
+    padding: 5px;    
+    width: 200px;    
+}
+
+.small-dropdown option {
+    font-size: 14px; 
+    padding: 3px; 
+    box-sizing: border-box;
+}   
+
+.statelistheading{
+	font-size: 25px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #111d2c;
+    cursor: pointer;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: linear-gradient(160deg, #FFAA33, #FFAA33);
+    width: 8px;
+    border-radius: 5px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+    background: #f26707  ;
+    cursor: pointer;
+}
+
+.table th {
+    text-align: center; /* Center text in table headers */
+}
+
+.S-no{
+    width: 100px;
+}
+
+.state-code-column{
+	width: 250px;
+}
+
+.state-column{
+	width: 400px;
+}
+
+.country-column{
+    width: 400px;
+}
+
+.actions-column{
+    width: 330px;
+}

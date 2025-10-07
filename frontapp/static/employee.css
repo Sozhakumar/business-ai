@@ -1,0 +1,295 @@
+
+
+.bi-box{
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #223a52;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    color: #495057;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+/* Focus state for the input */
+.date-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Styling the date input icon in browsers */
+.date-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+/* Disable spin buttons in number inputs (optional) */
+.date-input::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* Placeholder styling */
+.date-input::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+}
+
+/* Hover state */
+.date-input:hover {
+    border-color: #80bdff;
+}
+
+
+
+.header {
+    margin-left: 205px;
+    margin-top: 10px;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 15px;
+    transition: margin-left 0.3s ease; /* Added transition for smooth effect */
+}
+
+.table{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.a-highlight{
+    text-decoration:none;
+    color: #FF9933;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+}
+
+.a-highlight:hover {
+    text-decoration: none;
+    background-color: orange;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: 8px;
+    background-color: #111d2c;
+    cursor: pointer;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: linear-gradient(160deg, #FFAA33, #FFAA33);
+    width: 8px;
+    border-radius: 5px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+    background: #f26707  ;
+    cursor: pointer;
+}
+
+input.required-field:invalid,
+select.required-field:invalid {
+    border-color: red;
+}
+
+select.required-field:valid,
+input.required-field:valid {
+    border-color: initial; /* Reverts to default styling */
+}
+
+.textofcopyrights{
+    font-size: 10px;
+    color: gray;
+}
+
+.control-list{
+    width: 350px;
+}
+
+.Add_employee_heading{
+    font-size:20px;
+}
+
+.basic_heading{
+    padding: 5px;
+    font-size:18px ;
+    font-weight: 500;
+}
+
+.BI-BOX-1{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.bi-box-1{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.bi-headings{
+    font-size: 16px;
+}
+
+.bi-box-in{
+    width: 350px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);   
+}
+
+.BI-BOX-2{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.bi-box-2{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.BI-BOX-3{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.bi-box-3{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.credientials_details{
+    font-size:18px ;
+    font-weight: 500;
+    background-color: #D3D3D3;
+    padding: 5px;
+}
+
+.cid-box-1{
+    padding-left: 25px;
+    padding-top:5px;
+    padding-bottom: 15px;
+    width: 350px;
+}
+
+.other_details{
+    font-size:18px ;
+    font-weight: 500;
+    background-color: #D3D3D3;
+    padding: 5px;
+}
+
+.OD-BOX{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.od-box-1{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.bank_details{
+    font-size:18px ;
+    font-weight: 500;
+    background-color: #D3D3D3;
+    padding: 5px;
+}
+
+.BD-BOX{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.bd-box-1{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.net_salary_details{
+    font-size:18px ;
+    font-weight: 500;
+    background-color: #D3D3D3;
+    padding: 5px;
+}
+
+.NSD-BOX{
+    padding-left: 25px;
+    width: 350px;
+}
+
+.nsd-box-1{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.nsd-box-2{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.nsd-box-3{
+    padding-top:5px;
+    padding-bottom: 15px;
+}
+
+.form-control[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+
+.custom-select option {
+    font-size: 17px;   /* Adjust font size */
+    line-height: 2;   /* Adjust line height */
+}
+
+.collapse-header {
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.collapse-header2 {
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.collapse-header3{
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.collapse-header4 {
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.collapse-header5 {
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+#toggle-icon {
+    margin: 0px;
+    padding-right:10px;
+    font-size: 32px;
+    height: 55px;
+}

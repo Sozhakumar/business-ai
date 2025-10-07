@@ -1,0 +1,85 @@
+.bus-img{
+	height: 35px;
+	width: 110px;
+}
+
+.fonts{
+	font-family: "arial";
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 90px;
+}
+
+
+
+/* Hide the logo in the collapsed state */
+.sidebar.collapsed #logo {
+    display: none;
+}
+
+/* Collapse button icon toggle */
+#sidebarCollapse {
+    background-color: #111;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#sidebarCollapse:hover {
+    background-color: #333;
+}
+
+/* Collapsed state menu text */
+.sidebar.collapsed .menu-text {
+    display: none;
+}
+
+/* Icons in collapsed state are centered */
+.sidebar.collapsed .d-flex {
+    justify-content: center;
+}
+
+.a-highlight{
+    text-decoration:none;
+    color: #FF9933;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.a-highlight:hover {
+	text-decoration: none;
+    background-color: orange;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html ::-webkit-scrollbar {
+    width: 12px;
+    background-color: #111d2c;
+    cursor: pointer;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: linear-gradient(160deg, #FFAA33, #FFAA33);
+    width: 10px;
+    border-radius: 5px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+    background: #f26707  ;
+    cursor: pointer;
+}
